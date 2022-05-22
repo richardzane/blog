@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>延迟加载的方式 | RichardZane&#39;Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f89f62fb.css" as="style"><link rel="preload" href="/blog/assets/js/app.2e9696a1.js" as="script"><link rel="preload" href="/blog/assets/js/3.c351a46b.js" as="script"><link rel="preload" href="/blog/assets/js/1.b56bfbe1.js" as="script"><link rel="preload" href="/blog/assets/js/95.03921a84.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.7924a6e8.js"><link rel="prefetch" href="/blog/assets/js/100.c20fbb26.js"><link rel="prefetch" href="/blog/assets/js/101.ddccf474.js"><link rel="prefetch" href="/blog/assets/js/102.1b818d5f.js"><link rel="prefetch" href="/blog/assets/js/103.f5982b30.js"><link rel="prefetch" href="/blog/assets/js/104.41228083.js"><link rel="prefetch" href="/blog/assets/js/105.78452479.js"><link rel="prefetch" href="/blog/assets/js/106.7a22a1e8.js"><link rel="prefetch" href="/blog/assets/js/107.511301df.js"><link rel="prefetch" href="/blog/assets/js/108.a4377942.js"><link rel="prefetch" href="/blog/assets/js/109.9e5e87aa.js"><link rel="prefetch" href="/blog/assets/js/11.67476b3e.js"><link rel="prefetch" href="/blog/assets/js/110.9a036758.js"><link rel="prefetch" href="/blog/assets/js/111.fd0e5fb2.js"><link rel="prefetch" href="/blog/assets/js/112.5b71ab5c.js"><link rel="prefetch" href="/blog/assets/js/113.df47ba1c.js"><link rel="prefetch" href="/blog/assets/js/114.c0b29382.js"><link rel="prefetch" href="/blog/assets/js/115.06df81c3.js"><link rel="prefetch" href="/blog/assets/js/116.41a4789c.js"><link rel="prefetch" href="/blog/assets/js/117.b14a56c1.js"><link rel="prefetch" href="/blog/assets/js/118.73c53710.js"><link rel="prefetch" href="/blog/assets/js/119.3b726768.js"><link rel="prefetch" href="/blog/assets/js/12.002235f2.js"><link rel="prefetch" href="/blog/assets/js/120.eadeff3f.js"><link rel="prefetch" href="/blog/assets/js/121.f5855a1e.js"><link rel="prefetch" href="/blog/assets/js/122.fd29d8de.js"><link rel="prefetch" href="/blog/assets/js/123.4f6d8e7b.js"><link rel="prefetch" href="/blog/assets/js/124.f4720de9.js"><link rel="prefetch" href="/blog/assets/js/125.23f348f8.js"><link rel="prefetch" href="/blog/assets/js/126.4f09c86c.js"><link rel="prefetch" href="/blog/assets/js/127.c9229a0c.js"><link rel="prefetch" href="/blog/assets/js/128.8be8bcc1.js"><link rel="prefetch" href="/blog/assets/js/129.54b14c95.js"><link rel="prefetch" href="/blog/assets/js/13.d1f87670.js"><link rel="prefetch" href="/blog/assets/js/130.2aa6619d.js"><link rel="prefetch" href="/blog/assets/js/131.e82da77e.js"><link rel="prefetch" href="/blog/assets/js/132.8516b0bb.js"><link rel="prefetch" href="/blog/assets/js/133.83fd5a22.js"><link rel="prefetch" href="/blog/assets/js/134.b9aa3940.js"><link rel="prefetch" href="/blog/assets/js/135.e848495b.js"><link rel="prefetch" href="/blog/assets/js/136.1ccd793c.js"><link rel="prefetch" href="/blog/assets/js/137.0d0476d0.js"><link rel="prefetch" href="/blog/assets/js/138.3f955fcf.js"><link rel="prefetch" href="/blog/assets/js/139.657fb308.js"><link rel="prefetch" href="/blog/assets/js/14.61d08dcd.js"><link rel="prefetch" href="/blog/assets/js/140.b74af67e.js"><link rel="prefetch" href="/blog/assets/js/141.b000e673.js"><link rel="prefetch" href="/blog/assets/js/142.888eda10.js"><link rel="prefetch" href="/blog/assets/js/143.a359ab9e.js"><link rel="prefetch" href="/blog/assets/js/144.0b782e5b.js"><link rel="prefetch" href="/blog/assets/js/145.7518a325.js"><link rel="prefetch" href="/blog/assets/js/146.834610be.js"><link rel="prefetch" href="/blog/assets/js/147.fca88341.js"><link rel="prefetch" href="/blog/assets/js/148.d0304021.js"><link rel="prefetch" href="/blog/assets/js/149.7edfdc37.js"><link rel="prefetch" href="/blog/assets/js/15.4ae36ce9.js"><link rel="prefetch" href="/blog/assets/js/150.726f11a6.js"><link rel="prefetch" href="/blog/assets/js/151.f1bfe274.js"><link rel="prefetch" href="/blog/assets/js/152.e8b5b2cc.js"><link rel="prefetch" href="/blog/assets/js/153.16cd70c0.js"><link rel="prefetch" href="/blog/assets/js/154.db48419a.js"><link rel="prefetch" href="/blog/assets/js/155.11f82eb5.js"><link rel="prefetch" href="/blog/assets/js/156.c4b41ada.js"><link rel="prefetch" href="/blog/assets/js/157.b8ccf359.js"><link rel="prefetch" href="/blog/assets/js/158.a355e45c.js"><link rel="prefetch" href="/blog/assets/js/159.35326c1e.js"><link rel="prefetch" href="/blog/assets/js/16.ac3ae03a.js"><link rel="prefetch" href="/blog/assets/js/160.be35e45b.js"><link rel="prefetch" href="/blog/assets/js/161.363576d7.js"><link rel="prefetch" href="/blog/assets/js/162.0db2f48c.js"><link rel="prefetch" href="/blog/assets/js/163.5c14ea11.js"><link rel="prefetch" href="/blog/assets/js/164.3536d3e5.js"><link rel="prefetch" href="/blog/assets/js/165.e29b265e.js"><link rel="prefetch" href="/blog/assets/js/166.d3a53be5.js"><link rel="prefetch" href="/blog/assets/js/167.4b845a06.js"><link rel="prefetch" href="/blog/assets/js/168.6f40485a.js"><link rel="prefetch" href="/blog/assets/js/169.982e0917.js"><link rel="prefetch" href="/blog/assets/js/17.ace9d2b0.js"><link rel="prefetch" href="/blog/assets/js/170.89118d2f.js"><link rel="prefetch" href="/blog/assets/js/171.07c6daa0.js"><link rel="prefetch" href="/blog/assets/js/172.96490e1c.js"><link rel="prefetch" href="/blog/assets/js/173.eec9d048.js"><link rel="prefetch" href="/blog/assets/js/174.d4af082f.js"><link rel="prefetch" href="/blog/assets/js/175.95e0278e.js"><link rel="prefetch" href="/blog/assets/js/176.907d5067.js"><link rel="prefetch" href="/blog/assets/js/177.493da9ac.js"><link rel="prefetch" href="/blog/assets/js/178.e11358e3.js"><link rel="prefetch" href="/blog/assets/js/179.6b69126c.js"><link rel="prefetch" href="/blog/assets/js/18.e0124203.js"><link rel="prefetch" href="/blog/assets/js/180.478d2ec5.js"><link rel="prefetch" href="/blog/assets/js/181.3299c527.js"><link rel="prefetch" href="/blog/assets/js/182.d1d6947d.js"><link rel="prefetch" href="/blog/assets/js/183.c2a828c8.js"><link rel="prefetch" href="/blog/assets/js/184.92f674ba.js"><link rel="prefetch" href="/blog/assets/js/185.4085c2ef.js"><link rel="prefetch" href="/blog/assets/js/186.0db9c7c4.js"><link rel="prefetch" href="/blog/assets/js/187.e7b45053.js"><link rel="prefetch" href="/blog/assets/js/188.d8cd9f3d.js"><link rel="prefetch" href="/blog/assets/js/189.6f33bb71.js"><link rel="prefetch" href="/blog/assets/js/19.a2f374ba.js"><link rel="prefetch" href="/blog/assets/js/190.d6c40158.js"><link rel="prefetch" href="/blog/assets/js/191.6ff92978.js"><link rel="prefetch" href="/blog/assets/js/192.ec982388.js"><link rel="prefetch" href="/blog/assets/js/193.bd0f02dd.js"><link rel="prefetch" href="/blog/assets/js/194.482eb812.js"><link rel="prefetch" href="/blog/assets/js/195.5603c16d.js"><link rel="prefetch" href="/blog/assets/js/196.8470a190.js"><link rel="prefetch" href="/blog/assets/js/197.8acf7254.js"><link rel="prefetch" href="/blog/assets/js/198.91a83973.js"><link rel="prefetch" href="/blog/assets/js/199.5add7290.js"><link rel="prefetch" href="/blog/assets/js/20.d3ea2a63.js"><link rel="prefetch" href="/blog/assets/js/200.272d391a.js"><link rel="prefetch" href="/blog/assets/js/201.9896a95e.js"><link rel="prefetch" href="/blog/assets/js/202.091009de.js"><link rel="prefetch" href="/blog/assets/js/203.79dfce78.js"><link rel="prefetch" href="/blog/assets/js/204.61dbc970.js"><link rel="prefetch" href="/blog/assets/js/205.58ef1c66.js"><link rel="prefetch" href="/blog/assets/js/206.79537f62.js"><link rel="prefetch" href="/blog/assets/js/207.8207763f.js"><link rel="prefetch" href="/blog/assets/js/208.bef805d6.js"><link rel="prefetch" href="/blog/assets/js/209.08cff2c3.js"><link rel="prefetch" href="/blog/assets/js/21.1ef77d61.js"><link rel="prefetch" href="/blog/assets/js/210.513c26ed.js"><link rel="prefetch" href="/blog/assets/js/211.5fbea917.js"><link rel="prefetch" href="/blog/assets/js/212.a1de8bf7.js"><link rel="prefetch" href="/blog/assets/js/213.90227ee0.js"><link rel="prefetch" href="/blog/assets/js/214.c27ef651.js"><link rel="prefetch" href="/blog/assets/js/215.1631b508.js"><link rel="prefetch" href="/blog/assets/js/216.6089de49.js"><link rel="prefetch" href="/blog/assets/js/217.984bbb32.js"><link rel="prefetch" href="/blog/assets/js/218.d41e7d79.js"><link rel="prefetch" href="/blog/assets/js/219.95ceef23.js"><link rel="prefetch" href="/blog/assets/js/22.676cf74f.js"><link rel="prefetch" href="/blog/assets/js/220.3f76d921.js"><link rel="prefetch" href="/blog/assets/js/221.4c2a04e2.js"><link rel="prefetch" href="/blog/assets/js/222.e4e09b9c.js"><link rel="prefetch" href="/blog/assets/js/223.d3ff5f4e.js"><link rel="prefetch" href="/blog/assets/js/224.40de541a.js"><link rel="prefetch" href="/blog/assets/js/225.a88e60f9.js"><link rel="prefetch" href="/blog/assets/js/226.b917a557.js"><link rel="prefetch" href="/blog/assets/js/227.e5cf59bd.js"><link rel="prefetch" href="/blog/assets/js/228.3e297fdf.js"><link rel="prefetch" href="/blog/assets/js/229.1e2cf82c.js"><link rel="prefetch" href="/blog/assets/js/23.c5f3e2fb.js"><link rel="prefetch" href="/blog/assets/js/230.07d6e5dc.js"><link rel="prefetch" href="/blog/assets/js/231.306b817a.js"><link rel="prefetch" href="/blog/assets/js/232.cc29d2f2.js"><link rel="prefetch" href="/blog/assets/js/233.cf112556.js"><link rel="prefetch" href="/blog/assets/js/234.0729b7de.js"><link rel="prefetch" href="/blog/assets/js/235.a93b37a2.js"><link rel="prefetch" href="/blog/assets/js/236.c208e0dd.js"><link rel="prefetch" href="/blog/assets/js/237.39f15b8a.js"><link rel="prefetch" href="/blog/assets/js/238.92f592de.js"><link rel="prefetch" href="/blog/assets/js/239.059bf17a.js"><link rel="prefetch" href="/blog/assets/js/24.5a6f4b07.js"><link rel="prefetch" href="/blog/assets/js/240.14afe65c.js"><link rel="prefetch" href="/blog/assets/js/241.75d229c2.js"><link rel="prefetch" href="/blog/assets/js/242.1d81391f.js"><link rel="prefetch" href="/blog/assets/js/243.e02627e6.js"><link rel="prefetch" href="/blog/assets/js/244.607a71e7.js"><link rel="prefetch" href="/blog/assets/js/245.0ed3ee07.js"><link rel="prefetch" href="/blog/assets/js/246.08cff2f8.js"><link rel="prefetch" href="/blog/assets/js/247.a6942e1a.js"><link rel="prefetch" href="/blog/assets/js/248.cd209a2c.js"><link rel="prefetch" href="/blog/assets/js/249.75d9c919.js"><link rel="prefetch" href="/blog/assets/js/25.1dc08d9c.js"><link rel="prefetch" href="/blog/assets/js/250.ce680f27.js"><link rel="prefetch" href="/blog/assets/js/251.2b5f2f50.js"><link rel="prefetch" href="/blog/assets/js/252.c13b1437.js"><link rel="prefetch" href="/blog/assets/js/253.db202ffd.js"><link rel="prefetch" href="/blog/assets/js/254.2200428b.js"><link rel="prefetch" href="/blog/assets/js/255.fcb16f98.js"><link rel="prefetch" href="/blog/assets/js/256.6b794953.js"><link rel="prefetch" href="/blog/assets/js/257.5e69b61f.js"><link rel="prefetch" href="/blog/assets/js/258.b6e511f1.js"><link rel="prefetch" href="/blog/assets/js/259.6ee85cce.js"><link rel="prefetch" href="/blog/assets/js/26.c12b23b4.js"><link rel="prefetch" href="/blog/assets/js/260.39b53683.js"><link rel="prefetch" href="/blog/assets/js/261.56dfe43e.js"><link rel="prefetch" href="/blog/assets/js/262.ac4b7283.js"><link rel="prefetch" href="/blog/assets/js/263.226968f1.js"><link rel="prefetch" href="/blog/assets/js/264.c70abcfe.js"><link rel="prefetch" href="/blog/assets/js/265.0b942734.js"><link rel="prefetch" href="/blog/assets/js/266.e9a8ae99.js"><link rel="prefetch" href="/blog/assets/js/267.39b78403.js"><link rel="prefetch" href="/blog/assets/js/268.27217141.js"><link rel="prefetch" href="/blog/assets/js/269.98a89c3b.js"><link rel="prefetch" href="/blog/assets/js/27.894691cf.js"><link rel="prefetch" href="/blog/assets/js/270.691655eb.js"><link rel="prefetch" href="/blog/assets/js/271.25f4c662.js"><link rel="prefetch" href="/blog/assets/js/272.ec12123d.js"><link rel="prefetch" href="/blog/assets/js/273.270a9745.js"><link rel="prefetch" href="/blog/assets/js/274.0078ed96.js"><link rel="prefetch" href="/blog/assets/js/275.9f1afc96.js"><link rel="prefetch" href="/blog/assets/js/276.b49ef19f.js"><link rel="prefetch" href="/blog/assets/js/277.69ae8263.js"><link rel="prefetch" href="/blog/assets/js/278.f0d98721.js"><link rel="prefetch" href="/blog/assets/js/279.9f30c562.js"><link rel="prefetch" href="/blog/assets/js/28.0c338db9.js"><link rel="prefetch" href="/blog/assets/js/280.acf8cb34.js"><link rel="prefetch" href="/blog/assets/js/281.3817066a.js"><link rel="prefetch" href="/blog/assets/js/282.e8480f7b.js"><link rel="prefetch" href="/blog/assets/js/283.c8956019.js"><link rel="prefetch" href="/blog/assets/js/284.71e36709.js"><link rel="prefetch" href="/blog/assets/js/285.4e779b09.js"><link rel="prefetch" href="/blog/assets/js/286.e49ae12e.js"><link rel="prefetch" href="/blog/assets/js/287.3a346c91.js"><link rel="prefetch" href="/blog/assets/js/288.f1f27e78.js"><link rel="prefetch" href="/blog/assets/js/289.558cea23.js"><link rel="prefetch" href="/blog/assets/js/29.a9480be1.js"><link rel="prefetch" href="/blog/assets/js/290.30cb5352.js"><link rel="prefetch" href="/blog/assets/js/291.3e2c4889.js"><link rel="prefetch" href="/blog/assets/js/292.dee1d7ee.js"><link rel="prefetch" href="/blog/assets/js/293.5944f2a7.js"><link rel="prefetch" href="/blog/assets/js/294.35331e2d.js"><link rel="prefetch" href="/blog/assets/js/295.2822bf85.js"><link rel="prefetch" href="/blog/assets/js/296.6babbf8d.js"><link rel="prefetch" href="/blog/assets/js/297.53ad9677.js"><link rel="prefetch" href="/blog/assets/js/298.ed876840.js"><link rel="prefetch" href="/blog/assets/js/299.ebed7e85.js"><link rel="prefetch" href="/blog/assets/js/30.7c3e6298.js"><link rel="prefetch" href="/blog/assets/js/300.29567407.js"><link rel="prefetch" href="/blog/assets/js/301.c1de2f28.js"><link rel="prefetch" href="/blog/assets/js/302.93b0eb78.js"><link rel="prefetch" href="/blog/assets/js/303.6a384204.js"><link rel="prefetch" href="/blog/assets/js/304.bd22fe1e.js"><link rel="prefetch" href="/blog/assets/js/305.0fbe3f58.js"><link rel="prefetch" href="/blog/assets/js/306.9c1a085a.js"><link rel="prefetch" href="/blog/assets/js/307.4d0ff24a.js"><link rel="prefetch" href="/blog/assets/js/308.22f86566.js"><link rel="prefetch" href="/blog/assets/js/309.f041ba7f.js"><link rel="prefetch" href="/blog/assets/js/31.cb29c4a6.js"><link rel="prefetch" href="/blog/assets/js/310.7a4e0129.js"><link rel="prefetch" href="/blog/assets/js/311.4cb33966.js"><link rel="prefetch" href="/blog/assets/js/312.358f308d.js"><link rel="prefetch" href="/blog/assets/js/313.48edc77a.js"><link rel="prefetch" href="/blog/assets/js/314.72cac3f7.js"><link rel="prefetch" href="/blog/assets/js/315.03facfad.js"><link rel="prefetch" href="/blog/assets/js/316.c2e63f4c.js"><link rel="prefetch" href="/blog/assets/js/317.a10d7b5f.js"><link rel="prefetch" href="/blog/assets/js/318.5df57eaf.js"><link rel="prefetch" href="/blog/assets/js/319.107a5764.js"><link rel="prefetch" href="/blog/assets/js/32.47834414.js"><link rel="prefetch" href="/blog/assets/js/320.e33b96d1.js"><link rel="prefetch" href="/blog/assets/js/321.54091b27.js"><link rel="prefetch" href="/blog/assets/js/322.1954ce94.js"><link rel="prefetch" href="/blog/assets/js/323.7677413d.js"><link rel="prefetch" href="/blog/assets/js/324.fea94496.js"><link rel="prefetch" href="/blog/assets/js/325.146ca233.js"><link rel="prefetch" href="/blog/assets/js/326.b6341890.js"><link rel="prefetch" href="/blog/assets/js/327.abed83bb.js"><link rel="prefetch" href="/blog/assets/js/328.acbeb816.js"><link rel="prefetch" href="/blog/assets/js/329.a5f2e4c1.js"><link rel="prefetch" href="/blog/assets/js/33.2333d18d.js"><link rel="prefetch" href="/blog/assets/js/330.e6ec59f6.js"><link rel="prefetch" href="/blog/assets/js/331.94ba3aa3.js"><link rel="prefetch" href="/blog/assets/js/332.777f5667.js"><link rel="prefetch" href="/blog/assets/js/333.d7f8fb24.js"><link rel="prefetch" href="/blog/assets/js/334.3dfc9ae4.js"><link rel="prefetch" href="/blog/assets/js/335.2880a83a.js"><link rel="prefetch" href="/blog/assets/js/336.919814f0.js"><link rel="prefetch" href="/blog/assets/js/337.c6186fdc.js"><link rel="prefetch" href="/blog/assets/js/338.d79f8e16.js"><link rel="prefetch" href="/blog/assets/js/339.4d83b6c0.js"><link rel="prefetch" href="/blog/assets/js/34.4f70bed8.js"><link rel="prefetch" href="/blog/assets/js/340.5f7b4a86.js"><link rel="prefetch" href="/blog/assets/js/341.67cac159.js"><link rel="prefetch" href="/blog/assets/js/342.b0e0956a.js"><link rel="prefetch" href="/blog/assets/js/343.07b2c9d7.js"><link rel="prefetch" href="/blog/assets/js/344.521c1766.js"><link rel="prefetch" href="/blog/assets/js/345.ce5a6730.js"><link rel="prefetch" href="/blog/assets/js/346.854134f7.js"><link rel="prefetch" href="/blog/assets/js/347.5ec4c258.js"><link rel="prefetch" href="/blog/assets/js/348.5be642b6.js"><link rel="prefetch" href="/blog/assets/js/349.bbbe9d44.js"><link rel="prefetch" href="/blog/assets/js/35.8388c399.js"><link rel="prefetch" href="/blog/assets/js/350.02ba2341.js"><link rel="prefetch" href="/blog/assets/js/351.e81a2d73.js"><link rel="prefetch" href="/blog/assets/js/352.ce4969a5.js"><link rel="prefetch" href="/blog/assets/js/353.be90cf9a.js"><link rel="prefetch" href="/blog/assets/js/354.4fe96fde.js"><link rel="prefetch" href="/blog/assets/js/355.8f9bd0f5.js"><link rel="prefetch" href="/blog/assets/js/356.7563beec.js"><link rel="prefetch" href="/blog/assets/js/357.022cc4f5.js"><link rel="prefetch" href="/blog/assets/js/358.41abc541.js"><link rel="prefetch" href="/blog/assets/js/359.53bdb2bf.js"><link rel="prefetch" href="/blog/assets/js/36.ee937338.js"><link rel="prefetch" href="/blog/assets/js/360.8167ce97.js"><link rel="prefetch" href="/blog/assets/js/361.c380fe0f.js"><link rel="prefetch" href="/blog/assets/js/362.313290de.js"><link rel="prefetch" href="/blog/assets/js/363.2c1fb3b6.js"><link rel="prefetch" href="/blog/assets/js/364.837b57fe.js"><link rel="prefetch" href="/blog/assets/js/365.b4016d14.js"><link rel="prefetch" href="/blog/assets/js/366.42cb9095.js"><link rel="prefetch" href="/blog/assets/js/367.f28fa57c.js"><link rel="prefetch" href="/blog/assets/js/368.68d3cf26.js"><link rel="prefetch" href="/blog/assets/js/369.a637f0d8.js"><link rel="prefetch" href="/blog/assets/js/37.46d90e04.js"><link rel="prefetch" href="/blog/assets/js/370.de43dd91.js"><link rel="prefetch" href="/blog/assets/js/371.ceab0eeb.js"><link rel="prefetch" href="/blog/assets/js/372.3c37f83e.js"><link rel="prefetch" href="/blog/assets/js/373.64a41beb.js"><link rel="prefetch" href="/blog/assets/js/374.366bc1c1.js"><link rel="prefetch" href="/blog/assets/js/375.ce6fa4f6.js"><link rel="prefetch" href="/blog/assets/js/376.b7a1143e.js"><link rel="prefetch" href="/blog/assets/js/377.667aca9d.js"><link rel="prefetch" href="/blog/assets/js/378.b35c8e1a.js"><link rel="prefetch" href="/blog/assets/js/379.f94a7754.js"><link rel="prefetch" href="/blog/assets/js/38.5549d6a7.js"><link rel="prefetch" href="/blog/assets/js/380.40a771b3.js"><link rel="prefetch" href="/blog/assets/js/381.cedb0396.js"><link rel="prefetch" href="/blog/assets/js/382.13939c1b.js"><link rel="prefetch" href="/blog/assets/js/383.cbbcb994.js"><link rel="prefetch" href="/blog/assets/js/384.40a8d4b2.js"><link rel="prefetch" href="/blog/assets/js/385.274c932c.js"><link rel="prefetch" href="/blog/assets/js/386.23bb1976.js"><link rel="prefetch" href="/blog/assets/js/387.8be132a1.js"><link rel="prefetch" href="/blog/assets/js/388.6f648451.js"><link rel="prefetch" href="/blog/assets/js/39.9ae46fbf.js"><link rel="prefetch" href="/blog/assets/js/4.c11d1f84.js"><link rel="prefetch" href="/blog/assets/js/40.a3bd5af7.js"><link rel="prefetch" href="/blog/assets/js/41.ce228987.js"><link rel="prefetch" href="/blog/assets/js/42.706ea791.js"><link rel="prefetch" href="/blog/assets/js/43.b6386f27.js"><link rel="prefetch" href="/blog/assets/js/44.be46aa14.js"><link rel="prefetch" href="/blog/assets/js/45.d98dd3c9.js"><link rel="prefetch" href="/blog/assets/js/46.7b4750c8.js"><link rel="prefetch" href="/blog/assets/js/47.9f6d0d10.js"><link rel="prefetch" href="/blog/assets/js/48.98635251.js"><link rel="prefetch" href="/blog/assets/js/49.ccf4dc5d.js"><link rel="prefetch" href="/blog/assets/js/5.abb7dbf6.js"><link rel="prefetch" href="/blog/assets/js/50.9fba7e85.js"><link rel="prefetch" href="/blog/assets/js/51.95069689.js"><link rel="prefetch" href="/blog/assets/js/52.8eca744d.js"><link rel="prefetch" href="/blog/assets/js/53.464f0a3a.js"><link rel="prefetch" href="/blog/assets/js/54.4de71945.js"><link rel="prefetch" href="/blog/assets/js/55.7ea9c1d9.js"><link rel="prefetch" href="/blog/assets/js/56.146ad8c2.js"><link rel="prefetch" href="/blog/assets/js/57.dcc0819d.js"><link rel="prefetch" href="/blog/assets/js/58.f1751ad9.js"><link rel="prefetch" href="/blog/assets/js/59.6a187a34.js"><link rel="prefetch" href="/blog/assets/js/6.61ce26dc.js"><link rel="prefetch" href="/blog/assets/js/60.145a5bdb.js"><link rel="prefetch" href="/blog/assets/js/61.2c901536.js"><link rel="prefetch" href="/blog/assets/js/62.ebf09f3a.js"><link rel="prefetch" href="/blog/assets/js/63.64c3324d.js"><link rel="prefetch" href="/blog/assets/js/64.66118ebb.js"><link rel="prefetch" href="/blog/assets/js/65.2a04a56b.js"><link rel="prefetch" href="/blog/assets/js/66.f92ec39b.js"><link rel="prefetch" href="/blog/assets/js/67.3574abff.js"><link rel="prefetch" href="/blog/assets/js/68.42686068.js"><link rel="prefetch" href="/blog/assets/js/69.5e46e656.js"><link rel="prefetch" href="/blog/assets/js/7.d362f687.js"><link rel="prefetch" href="/blog/assets/js/70.3173635d.js"><link rel="prefetch" href="/blog/assets/js/71.029e02ae.js"><link rel="prefetch" href="/blog/assets/js/72.515125c8.js"><link rel="prefetch" href="/blog/assets/js/73.fc51264a.js"><link rel="prefetch" href="/blog/assets/js/74.b2b8be5a.js"><link rel="prefetch" href="/blog/assets/js/75.388ec1ec.js"><link rel="prefetch" href="/blog/assets/js/76.d5f9dc57.js"><link rel="prefetch" href="/blog/assets/js/77.8fcb1308.js"><link rel="prefetch" href="/blog/assets/js/78.bd4f1e95.js"><link rel="prefetch" href="/blog/assets/js/79.be4ea3a5.js"><link rel="prefetch" href="/blog/assets/js/8.8155310e.js"><link rel="prefetch" href="/blog/assets/js/80.8df4dd15.js"><link rel="prefetch" href="/blog/assets/js/81.8fbe5f33.js"><link rel="prefetch" href="/blog/assets/js/82.e6426f58.js"><link rel="prefetch" href="/blog/assets/js/83.35f3fa7c.js"><link rel="prefetch" href="/blog/assets/js/84.c3cee926.js"><link rel="prefetch" href="/blog/assets/js/85.e55dc7ce.js"><link rel="prefetch" href="/blog/assets/js/86.d6a8e46d.js"><link rel="prefetch" href="/blog/assets/js/87.2dbc179c.js"><link rel="prefetch" href="/blog/assets/js/88.aa597b69.js"><link rel="prefetch" href="/blog/assets/js/89.1a356f82.js"><link rel="prefetch" href="/blog/assets/js/9.7ec91b0d.js"><link rel="prefetch" href="/blog/assets/js/90.8c6f1b4b.js"><link rel="prefetch" href="/blog/assets/js/91.1fb0427d.js"><link rel="prefetch" href="/blog/assets/js/92.9d75ca75.js"><link rel="prefetch" href="/blog/assets/js/93.dde6f8d0.js"><link rel="prefetch" href="/blog/assets/js/94.259a8586.js"><link rel="prefetch" href="/blog/assets/js/96.9a22ce5e.js"><link rel="prefetch" href="/blog/assets/js/97.be78bf9b.js"><link rel="prefetch" href="/blog/assets/js/98.68d2f8f0.js"><link rel="prefetch" href="/blog/assets/js/99.a180b7bf.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f89f62fb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>RichardZane'Blog</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2></p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>RichardZane</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">RichardZane'Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="undefined"></i>
+   Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/window/" class="nav-link"><i class="undefined"></i>
+  window
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/shortcut 快捷键/" class="nav-link"><i class="undefined"></i>
+  shortcut 快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/typora/" class="nav-link"><i class="undefined"></i>
+  typora
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/mac/" class="nav-link"><i class="undefined"></i>
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/bootstrap/" class="nav-link"><i class="undefined"></i>
+  bootstrap
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/css3/" class="nav-link"><i class="undefined"></i>
+  css3
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/es6/" class="nav-link"><i class="undefined"></i>
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/eslint/" class="nav-link"><i class="undefined"></i>
+  eslint
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/interview/" class="nav-link"><i class="undefined"></i>
+  interview
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/scroll/" class="nav-link"><i class="undefined"></i>
+  scroll
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/server/" class="nav-link"><i class="undefined"></i>
+  server
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/jetbrains/" class="nav-link"><i class="undefined"></i>
+  jetbrains
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/jquery/" class="nav-link"><i class="undefined"></i>
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/mini-program/" class="nav-link"><i class="undefined"></i>
+  mini-program
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/sass/" class="nav-link"><i class="undefined"></i>
+  sass
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vite/" class="nav-link"><i class="undefined"></i>
+  vite
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/stylus/" class="nav-link"><i class="undefined"></i>
+  stylus
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/web/" class="nav-link"><i class="undefined"></i>
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/weui/" class="nav-link"><i class="undefined"></i>
+  weui
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/yarn/" class="nav-link"><i class="undefined"></i>
+  yarn
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/zepto/" class="nav-link"><i class="undefined"></i>
+  zepto
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><!----> <h3 class="name" data-v-39576ba9>
+    RichardZane
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>241</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>40</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="undefined"></i>
+   Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/window/" class="nav-link"><i class="undefined"></i>
+  window
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/shortcut 快捷键/" class="nav-link"><i class="undefined"></i>
+  shortcut 快捷键
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/typora/" class="nav-link"><i class="undefined"></i>
+  typora
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/mac/" class="nav-link"><i class="undefined"></i>
+  mac
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/axios/" class="nav-link"><i class="undefined"></i>
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/bootstrap/" class="nav-link"><i class="undefined"></i>
+  bootstrap
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/css/" class="nav-link"><i class="undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/css3/" class="nav-link"><i class="undefined"></i>
+  css3
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/es6/" class="nav-link"><i class="undefined"></i>
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/git/" class="nav-link"><i class="undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/eslint/" class="nav-link"><i class="undefined"></i>
+  eslint
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/interview/" class="nav-link"><i class="undefined"></i>
+  interview
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/javascript/" class="nav-link"><i class="undefined"></i>
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/scroll/" class="nav-link"><i class="undefined"></i>
+  scroll
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/server/" class="nav-link"><i class="undefined"></i>
+  server
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/jetbrains/" class="nav-link"><i class="undefined"></i>
+  jetbrains
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/jquery/" class="nav-link"><i class="undefined"></i>
+  jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/mini-program/" class="nav-link"><i class="undefined"></i>
+  mini-program
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/sass/" class="nav-link"><i class="undefined"></i>
+  sass
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vite/" class="nav-link"><i class="undefined"></i>
+  vite
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vue3/" class="nav-link"><i class="undefined"></i>
+  vue3
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/vue/" class="nav-link"><i class="undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/stylus/" class="nav-link"><i class="undefined"></i>
+  stylus
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/web/" class="nav-link"><i class="undefined"></i>
+  web
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/weui/" class="nav-link"><i class="undefined"></i>
+  weui
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/yarn/" class="nav-link"><i class="undefined"></i>
+  yarn
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/zepto/" class="nav-link"><i class="undefined"></i>
+  zepto
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2></h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>RichardZane</span>
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">延迟加载的方式</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>RichardZane</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="延迟加载的方式"><a href="#延迟加载的方式" class="header-anchor">#</a> 延迟加载的方式</h1> <ul><li>第一种，把 script 标签放在 body 里面的最后。</li> <li>第二种，给 script 标签加上 async 属性。它会在 html 解析的期间开始下载 js 脚本，等 js 脚本下载完成之后，暂停 html 解析，开始执行 js 脚本。它执行 js 脚本是不按照顺序的，谁先加载完成谁先执行。</li> <li>第二种，给 script 标签加上 defer 属性。它会在 html 解析的期间开始下载 js 脚本，等 js 脚本下载完成之后，继续等待全部 html 解析完成，之后才开始执行 js 脚本。它执行 js 脚本是按照顺序的，谁先引入谁先执行。</li></ul> <hr> <h1 id="宏任务、微任务、事件循环"><a href="#宏任务、微任务、事件循环" class="header-anchor">#</a> 宏任务、微任务、事件循环</h1> <ul><li>js 是一门单线程语言，在同一时间内，只能做一件事情；</li> <li>js 的任务分为同步任务和异步任务，其中异步任务又包括宏任务和微任务。常见的宏任务包括发送请求、绑定事件、设置定时器和 script 标签里面的代码，常见的微任务包括 Promise.then() 和 this.$nextTick() 方法。</li> <li>js 一般先执行同步任务，接着执行微任务，然后执行宏任务。</li> <li>js 执行任务是遵循 event loop 事件循环机制的。所有任务进入到执行栈，判断当前任务是同步任务还是异步任务，同步任务进入主线程，异步任务进行事件列表，区分宏任务还是微任务，注册回调函数之后，放到任务队列中。主线程上，当之前的同步任务执行完成之后，就会去读取任务队列里面的任务，放大主线程上去执行。以上过程将不断重复。</li></ul> <p>考题：</p> <div class="language- extra-class"><pre class="language-text"><code>for(let i = 0; i &lt; 3; i++){
+	setTimeout(()=&gt;{
+		console.log(i)
+	},i*1000)
+}
+// 3 // 第0秒打印
+// 3 // 第1秒打印
+// 3 // 第2秒打印
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>setTimeout(()=&gt;{ //宏任务1
+	console.log('1') // 宏任务1-同步任务1
+	
+	setTimeout(()=&gt;{
+		console.log('2') // 宏任务3（放入宏任务队列，此前队列已经存在未执行的宏任务2）
+	},0)
+	
+	new Promise(resolve=&gt;{
+		console.log('3') //宏任务1-同步任务2
+		resolve()
+	}).then(()=&gt;{
+		console.log('4') //宏任务1-微任务1（放入微任务队列）
+	})
+	
+},0)
+
+setTimeout(()=&gt;{ //宏任务2
+	console.log('5') //宏任务2-同步任务1
+},0)
+
+console.log('6') //同步任务
+// 6 1 3 4 5 2
+</code></pre></div><hr> <h1 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h1> <ul><li>我的理解是，闭包是一个函数和创建这个函数的作用域的连接，闭包关闭了函数的自由变量。（自由变量：在当前作用域中使用，在其他作用域中声明的变量。）</li> <li>内部函数被外部函数返回并且保存起来使用，导致外部函数的作用域不被释放，这样就产生了闭包。</li> <li>闭包的优点是内部函数可以访问外部函数的局部变量。</li> <li>闭包的缺点是，变量长期驻留在内存中，会造成内存损耗的问题。为了解决这个问题，可以将被返回的内部函数设置为 null。（另外在 ie 浏览器中，闭包可以造成内存泄漏问题。）</li></ul> <hr> <h1 id="原型和原型链"><a href="#原型和原型链" class="header-anchor">#</a> 原型和原型链</h1> <ul><li>根据我的了解，作者设计原型是为了实现属性和方法的共享。</li> <li>每个对象都有一个 prototype 属性，它指向对象的原型；每个构造函数都有一个 <code>__proto__</code> 属性，它指向构造函数的原型对象。（每个对象的原型都有一个 constructor 属性，它指向了构造函数。）</li> <li>js 查找属性和方法的顺序是：首先到对象里面去查找，如果找不到，就去构造函数里面查找。如果找不到，就去对象的原型里面查找。如果找不到，就去构造函数的原型对象里面查找。如果找不到，就去对象的原型的原型里面查找。这样就形成了一个查找的链条，把它叫做原型链。</li> <li>原型链的最顶端是 null。</li></ul> <hr> <h1 id="继承方式"><a href="#继承方式" class="header-anchor">#</a> 继承方式</h1> <ul><li>有 es6 继承的方式，使用 extends 关键字：</li> <li>还有原型式继承，声明一个创建子类的普通函数，在普通函数内部，声明一个构造函数，将构造函数的原型对象指向传入的对象，返回构造函数创建的实例：</li> <li>还有原型链继承，让子级构造函数的原型对象指向父级构造函数的实例：</li> <li>还有借用构造函数继承，在子级构造函数中引入父级构造函数，可以使用 call 等方法：</li> <li>还有原型链和借用构造函数的组合继承方式；</li> <li>另外还有寄生式继承和寄生式组合继承。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class Parent {
+	this.name = 'z'
+}
+class Child extends Parent {
+	constructor(){
+		super()
+	}
+}
+const child = new Child()
+console.log(child.name)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function Parent(){
+	this.name = 'z'
+}
+function createChild(obj){
+	function Fun(){	
+	}
+	Fun.prototype = obj
+	return new Fun()
+}
+const parent = new Parent()
+const child = createChild(parent)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function Parent(){
+	this.name = 'z'
+}
+function Child(){	
+}
+Child.prototype = new Parent()
+const child = new Child()
+console.log(child.name)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function Parent(){
+	this.name = 'z'
+}
+function Child(){	
+	Parent.call(this)
+}
+const child = new Child()
+console.log(child.name)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function Parent(){
+	this.name = 'z'
+}
+function Child(){	
+	Parent.call(this)
+}
+Child.prototype = new Parent()
+const child = new Child()
+console.log(child.name)
+</code></pre></div><hr> <h1 id="call、apply、bind"><a href="#call、apply、bind" class="header-anchor">#</a> call、apply、bind</h1> <ul><li>call、apply 和 bind 方法都可以用来改变函数的 this 指向。</li> <li>（非指向参数的形式不同）call 和 bind 方法的非指向参数的形式是一个不定参数，可以传入多个；apply 方法的非指向参数的形式是一个数组，只能传入一个。</li> <li>call 和 apply 方法执行之后立即调用，bind 方法执行之后返回一个函数，需要再次调用。</li></ul> <hr> <h1 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="header-anchor">#</a> 浅拷贝和深拷贝</h1> <ul><li>浅拷贝和深拷贝是针对引用数据类型而言的，基本数据类型在堆中存放的是值，引入数据类型在堆中存放的是地址，在栈中存放的才是真正的值。</li> <li>浅拷贝只是复制了地址，拷贝出来的对象的属性和方法发生变化，原对象也会收到影响；深拷贝是复制真正的值，拷贝出来的对象的属性和方法发生变化，原对象不会收到影响。</li> <li>浅拷贝经常使用的方法有两种：一种是直接赋值，另一种是使用 Object.assign() 方法；深拷贝经常使用的方法也有两种：一种是结合使用 JSON.stringify() 和 JSON.parse() 方法，另一种是自己封装一个递归函数。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const newObject = object
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>const newObject = Object.assign({},object)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>const newObject = JSON.parse(JSON.stringify(object))
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function deepCopy(target){
+	// 声明结果
+	let result
+	// 引用数据类型
+	if(typeof target === 'object'){
+		// 无
+		if(target === null){
+			// 结果赋值为null
+			result = null
+		}
+		// 数组
+		else if(Array.isArray(target)){
+			// 结果先赋值为空数组
+			result = []
+			// 遍历数组
+			for(let i = 0; i &lt; target.length; i++){
+				// 深拷贝赋值给结果
+				result[i] = deepCopy(target[i])
+			}
+		}
+		// 对象
+		else{
+			// 结果先赋值为空对象
+			result = []
+			// 遍历对象
+			for(let k in target){
+				// 深拷贝复制给结果
+				result[k] = deepCopy(target[k])
+			}
+		}
+	}
+	// 基本数据类型
+	else{
+		// 直接赋值给结果
+		result = target
+	}
+	// 返回结果
+	return result
+}
+const newObject = deepCopy(object)
+</code></pre></div><hr> <h1 id="localstorage、sessionstorage、cookie"><a href="#localstorage、sessionstorage、cookie" class="header-anchor">#</a> localStorage、sessionStorage、cookie</h1> <ul><li>localStorage、sessionStorage 和 cookie 都可以用来在客户端存储数据。</li> <li>存储在 localStorage 中的数据，是持久化存在的，除非手动清除；存储在 sessionStorage 中的数据，在关闭浏览器之后就会消失；存储在 cookie 中的数据，在设置的过期时间之内一致生效。</li> <li>localStorage 和 sessionStorage 能够存储的容量大约是 5MB，cookie 能够存储的容量大约是 4KB。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>localStorage.setItem('key','value')
+localStorage.removeItem('key')
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>sessionStorage.setItem('key','value')
+sessionStorage.removeItem('key')
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>document.cookie=`key=value;expires=${date.toUTCString()}'
+document.cookie=''
+</code></pre></div><hr> <h1 id="new-操作符具体做了什么"><a href="#new-操作符具体做了什么" class="header-anchor">#</a> new 操作符具体做了什么</h1> <ul><li>（创建对象）第一步，创建一个空的对象；</li> <li>（指向原型）第二步，将空对象的原型指向构造函数的原型对象；</li> <li>（改变 this 指向）第三步，改变构造函数的 this 指向，将空对象作为构造函数的执行上下文。</li> <li>（判断返回值）第四步，判断构造函数执行之后的返回值的数据类型，如果是基本数据类型，则返回空对象，如果是引用数据类型，则返回执行之后的返回值。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function mockNew(Fun,..args){
+	// 创建对象
+	const obj = {}
+	// 指向原型
+	Object.setPrototypeOf(obj,Fun.prototype)
+	// 改变 this 指向
+	const result = Fun.apply(obj,args)
+	// 判断返回值
+	return result instanceOf Object ? result : obj
+}
+</code></pre></div><hr> <h1 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h1> <ul><li>数据类型包括基本数据类型和引用数据类型。</li> <li>其中基本数据类型包括： number 数值型、string 字符串型、boolean 布尔型、undefined 未定义型、 null 空型。</li> <li>其中引用类型包括：object 对象型。</li></ul> <p>考题：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log( true+1 ) // 2 (true转化为1)
+console.log( name+1 ) // 'name1' （字符串和任何类型相加，结果都等于字符串）
+console.log( undefined+1 ) // NaN （数值类型）
+console.log( typeof null ) // 'object'
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>console.log( typeof NaN) // 'number'
+console.log(typeof undefined) // 'undefined'
+console.log(typeof null) // 'object'
+</code></pre></div><hr> <h1 id="null-和-undefined-的区别"><a href="#null-和-undefined-的区别" class="header-anchor">#</a> null 和 undefined 的区别</h1> <ul><li>作者首先设计了 null ，然后再补充了 undefined。</li> <li>null 表示“无”的对象，undefined 表示“无”的基本数据类型。</li> <li>null 转换成数值是 0，undefined 转换成数值是 NaN (not a number) 非数字。</li></ul> <hr> <h1 id="和-的区别"><a href="#和-的区别" class="header-anchor">#</a> == 和 === 的区别</h1> <ul><li>== 等于只是比较值；== 全等于不仅比较值，而且比较类型。</li> <li>不同类型的比较，会进行隐式转换。</li></ul> <p>考题：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log( 1 == '1' ) // true（数值类型和字符串类型比较，将字符串类型转为数值类型，将'1'转为1）
+console.log( 1 == true) // true（数值类型和布尔类型比较，将布尔类型转为数值类型，将true转为1）
+console.log( [1,2] == '1,2' ) //true（引用类型和基本类型比较，将引用类型转为基本类型，将[1,2]转为'1,2'）
+</code></pre></div><hr> <h1 id="判断变量是否是数组的方法"><a href="#判断变量是否是数组的方法" class="header-anchor">#</a> 判断变量是否是数组的方法</h1> <p>方法一，使用 Array.isArray 方法：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(Array.isArray([]))
+</code></pre></div><p>方法二，使用 Array.prototype.isPrototypeOf() 方法：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(Array.prototype.isPrototypeOf([]))
+</code></pre></div><p>方法三，判断 constructor.toString() 里面是否包含 Array 字符串：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log([].constructor.toString().includes('Array'))
+</code></pre></div><hr> <h1 id="slice-和-splice-方法"><a href="#slice-和-splice-方法" class="header-anchor">#</a> slice 和 splice 方法</h1> <p>一、slice() 方法：</p> <ul><li><p>该方法用来截取数组元素，返回的是一个包含被截取元素的新数组。</p></li> <li><p>该方法不会影响原数组。</p></li> <li><p>第一个参数 start，开始截取的下标，第二个参数 end，结束截取的下标，截取范围左闭右开。</p></li> <li><p>如果只传入一个开始下标，则从开始下标截取到数组最后一位，包括最后一位。</p></li> <li><p>如果只传入的开始下标是负数，从倒数第几个开始截取到数组最后一位，包括最后一位。</p></li> <li><p>如果开始下标和结束下标都是负数，倒数开始截取，不包括结束的个数。</p></li></ul> <p>二、splice() 方法</p> <ul><li>该方法用来添加或者删除数组元素，如果添加元素，返回一个新的空数组，如果删除元素，返回的是一个包含被删除元素的新数组。</li> <li>该方法会影响原数组。</li> <li>第一个参数 index ，开始操作的索引；第二个参数 number ，要删除的元素数量，后面是不定参数，依次传入要添加的元素。</li></ul> <hr> <h1 id="数组去重方法"><a href="#数组去重方法" class="header-anchor">#</a> 数组去重方法</h1> <p>一、使用 Set 数据结构和 Array.from() 方法：</p> <div class="language- extra-class"><pre class="language-text"><code>const newArray = Array.from(new Set(array))
+</code></pre></div><p>二、遍历数组，使用 inlcudes() 方法判断新数组中是否存在当前元素：</p> <div class="language- extra-class"><pre class="language-text"><code>const newArray = []
+array.forEach(value=&gt;{
+	if(!newArray.includes(vavlue)){
+		newArray.push(value)
+	}
+})
+</code></pre></div><p>三、先使用 sort() 方法将数组排好序，再遍历数组，判断前一个元素是否和后一个元素相等：</p> <div class="language- extra-class"><pre class="language-text"><code>const newArray = []
+const a = array.sort()
+newArray.push(a[0])
+for(let i = 1; i &lt; a.length; i++){
+	if(a[i] !== a[i-1]){
+		newArray.push(a[i])
+	}
+}
+</code></pre></div><ul><li>注意 a[-1] === undefined</li></ul> <hr> <h1 id="防抖和节流"><a href="#防抖和节流" class="header-anchor">#</a> 防抖和节流</h1> <p>一、参考文章：</p> <ul><li>https://blog.csdn.net/zuorishu/article/details/93630578</li></ul> <p>二、防抖：触发事件，延迟一定时间后再执行函数；如果这段时间内再次触发函数，则重新开始计时，最后才执行一次。</p> <div class="language- extra-class"><pre class="language-text"><code>function debounce(fun,delay){
+	// 声明定时器
+	let timer
+	// 声明内部函数
+	return function(){
+		// 如果已经设置了定时器
+		if(timer){
+			// 清除定时器
+			window.clearTimeout(timer)
+		}
+		// 重新开始计时
+		timer = window.setTimeout(fun,delay)
+	}
+}
+</code></pre></div><p>三、节流：触发事件，延迟一定时间后执行函数；如果这段时间内再次触发函数，直接退出。保证一定时间内只能执行一次函数，间隔多次。</p> <div class="language- extra-class"><pre class="language-text"><code>function throttle(){
+	// 打开开关
+	let flag = true
+	// 声明内部函数 
+	return function(fun,delay){
+		// 如果开关关闭
+		if(!flag){
+			// 直接返回
+			return
+		}
+		// 关闭开关
+		flag = false
+		// 设置定时器
+		window.setTimeout(()=&gt;{
+			// 执行函数
+			fun()
+			// 打开开关
+			flag = true
+		},delay)
+	}
+}
+</code></pre></div><hr> <h1 id="预编译"><a href="#预编译" class="header-anchor">#</a> 预编译</h1> <p>参考文章：</p> <p>https://zhuanlan.zhihu.com/p/483283900</p> <p>概念：</p> <p>预编译是做一些代码文本的替换工作，是整个编译过程最先做的工作。</p> <p>过程：</p> <p>预编译在全局执行开始之前，首先会创建一个 GO 对象。GO 全称 Global Object，全局对象，也可以叫做全局执行期上下文。在创建完 GO 对象之后，会继续执行以下步骤：第一步，寻找变量的声明，找到之后把它放入 GO 里面，并且赋值为 undefined；第二步，寻找函数的声明，并且赋值函数体。第三部，执行全局。</p> <p>预编译在函数执行开始之前，首先会创建一个 AO 对象。AO 全称 Activation Object，活跃对象，也可以叫做函数执行期上下文。在创建完 AO 对象之后，会继续执行以下步骤：第一步，寻找函数的形参和变量的声明，找到之后把它们放入 AO 里面，并且赋值为 undefined；第二步，把实参赋值给形参；第三步，寻找函数的声明，并且赋值函数体；第四步，执行函数。</p> <p>注意预编译阶段做过的事情，在函数执行之前不会再做，只会做没做过的事情。</p> <p>案例：</p> <div class="language- extra-class"><pre class="language-text"><code>var b = 1;
+console.log(a)
+function a(a){
+	console.log(a)
+	var a = 2
+	console.log(a)
+	function a(){}
+	var b = 3
+	console.log(b)
+}
+a(0)
+</code></pre></div><p>步骤：</p> <div class="language- extra-class"><pre class="language-text"><code>go = {
+	b: undefined;
+} 
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>go = {
+	b: undefined;
+	a: function a(a) {};
+} 
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>go = {
+	b: undefined - 1;
+	a: function(a) {};
+}
+ao = {
+	a: undefined;
+	b: undefined;
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>go = {
+	b: undefined - 1;
+	a: function(a) {};
+}
+ao = {
+	a: undefined - 0;
+	b: undefined;
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>go = {
+	b: undefined - 1;
+	a: function(a) {};
+}
+ao = {
+	a: undefined - 0 - function a(){};
+	b: undefined;
+}
+</code></pre></div><hr> <h1 id="找出二维数组中每组的最大值"><a href="#找出二维数组中每组的最大值" class="header-anchor">#</a> 找出二维数组中每组的最大值</h1> <p>遍历二维数组，使用 Math.max() 方法找出当前数组的最大值：</p> <div class="language- extra-class"><pre class="language-text"><code>const newArray = []
+doubleArray.forEach(array=&gt;{
+	newArray.push(Math.max(...array))
+})
+</code></pre></div><hr> <h1 id="找出多维数组的最大值"><a href="#找出多维数组的最大值" class="header-anchor">#</a> 找出多维数组的最大值</h1> <p>首先使用 join() 方法将多维数组连接成一个字符串，再使用 split() 方法将字符串分割成一个一维数组，最后使用 Math.max() 方法找出最大值：</p> <div class="language- extra-class"><pre class="language-text"><code>const newArray = array.join(',').split(',')
+const maxValue = Math.max(...newArray)
+</code></pre></div><hr> <h1 id="给字符串新增方法实现功能"><a href="#给字符串新增方法实现功能" class="header-anchor">#</a> 给字符串新增方法实现功能</h1> <div class="language- extra-class"><pre class="language-text"><code>String.prototype.addPrefix = function(str){
+	return str + this
+}
+console.log( 'world'+addPrefix('hello') )
+</code></pre></div><hr> <h1 id="找出字符串中出现次数最多的字符以及个数"><a href="#找出字符串中出现次数最多的字符以及个数" class="header-anchor">#</a> 找出字符串中出现次数最多的字符以及个数</h1> <p>创建一个空对象来做map，遍历字符串，如果当前字符在空对象中存在，计数+1；否则，计数为1：</p> <div class="language- extra-class"><pre class="language-text"><code>const str = ''
+const obj = {}
+for(let i = 0; i &lt; str.length; i++){
+	let c = str[i]
+	if(obj[c]){
+		obj[c] += 1
+	}else{
+		obj[c] = 1
+	}
+}
+let maxChar = ''
+let maxCount = 0
+for(let k in obj){
+	let count = obj[k]
+	if(count &gt; maxCount){
+		maxChar = k
+		maxCount = count
+	}
+}
+</code></pre></div><hr> <h1 id="作用域考题"><a href="#作用域考题" class="header-anchor">#</a> 作用域考题</h1> <p>在 es6 之前，js 是没有块级作用域的，只有全局作用域和函数作用域。</p> <div class="language- extra-class"><pre class="language-text"><code>if(true){
+	var v = 1
+}
+console.log(v) // 1
+</code></pre></div><p>没有使用 var 声明的变量是全局变量。</p> <div class="language- extra-class"><pre class="language-text"><code>(function(){
+	var a = b = 10 // 相当于 var a; b = 10; a 是一个函数变量，b 是一个全局变量。
+})()
+console.log(a) // 报错
+console.log(b) // 10
+</code></pre></div><p>var 具有变量提升的机制。</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(a) //undefined
+if(false){
+ var a = 10
+}
+// 没有块级作用域，变量提升，但是不赋值
+</code></pre></div><p>内部可以访问外部的变量，反之不成立。如果内部和外部都有相同命令的变量，优先使用内部的变量。</p> <p>作用域的优先级：声明赋值变量 &gt; 声明普通函数 &gt; 参数 &gt; 变量提升。</p> <div class="language- extra-class"><pre class="language-text"><code>function fun(a){
+	var a = 10
+	function a(){
+	
+	}
+	console.log(a)
+}
+fun(100) // 10
+</code></pre></div><p>考题：</p> <div class="language- extra-class"><pre class="language-text"><code>function c(){
+	var b = 1
+	function a(){
+		console.log(b)
+		var b = 2
+		console.log(b)
+	}
+	a()
+	console.log(b)
+}
+c()
+// undefined
+// 2
+// 1
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>var name = 'a'
+(function(){
+	if(typeof name == 'undefined'){
+		var name = 'b'
+		console.log('111'+name)
+	}else{
+		console.log('222'+name)
+	}
+})()
+// 111b
+// 没有块级作用域，name 变量提升
+</code></pre></div><hr> <h1 id="对象考题"><a href="#对象考题" class="header-anchor">#</a> 对象考题</h1> <p>两个值相等的对象，如果引用地址不相等，它们不是同一个对象。</p> <div class="language- extra-class"><pre class="language-text"><code>console.log( [1,2,3] === [1,2,3] ) // false
+cosnt a = [1,2,3]
+const na = a
+console.log( a === na ) // true
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>var obj1 = {
+	a: 'hellow'
+}
+var obj2 = obj1
+obj2.a = 'world'
+console.log( obj1 ) // {a:'hellow'}
+</code></pre></div><p>对象的 key 都是字符串类型 'Object object'，所以用对象做 key 会覆盖。</p> <div class="language- extra-class"><pre class="language-text"><code>var a = {}
+var b = {
+	key: 'a'
+}
+var c = {
+	key: 'c'
+}
+a[b] = '123' // a['Object object'] = '123'
+a[c] = '456' //a['Object object'] = '456'
+console.log( a[b] ) // '456'
+</code></pre></div><p>对象查找属性的顺序：首先到对象本身去找，如果找不到，到构造函数去找。如果找不到，去对象的原型去找。如果找不到，去构造函数的原型去找。如果找不到，到对象的原型的原型去找。</p> <div class="language- extra-class"><pre class="language-text"><code>function Fun(){
+	this.a = '这是构造函数的a'
+}
+Fun.prototype.a = '这是构造函数原型对象的a'
+const obj = new Fun()
+obj.a = '这是对象的a'
+obj.__proto__.a = '这是对象的原型的a'
+console.log( obj.a ) // '这是对象的a'
+</code></pre></div><hr> <h1 id="作用域-this-指向-原型-考题"><a href="#作用域-this-指向-原型-考题" class="header-anchor">#</a> 作用域 + this 指向 + 原型 考题</h1> <p>定义在构造函数里面this的属性和定义在构造函数体上的属性是不同的。</p> <div class="language- extra-class"><pre class="language-text"><code>function Foo(){
+	getName = function(){console.log(1)}  //没有加this，定义在全局上，普通函数
+	return this
+}
+Foo.getName = function(){console.log(2)} //定义在函数体上
+Foo.prototype.getName = function(){console.log(3)} //定义在构造函数的原型对象上
+var getName = function(){console.log(4)} //定义在全局上，声明式函数
+function getName(){ //定义在全局上，普通函数
+	function(){console.log(5)}
+}
+Foo.getName() // 2，寻找定义在构造函数上的
+getName() // 4，Foo()还未执行，声明式函数大于普通函数
+Foo().getName() //1 ，Foo()执行了，返回this指向 window，寻找定义在全局上的函数，getName = function(){console.log(1)}
+getName() // 1
+new Foo().getName() //3 ，new Foo()，返回this指向对象，寻找定义在对象上的函数，找不到，寻找定义在构造函数中的，找不到，
+</code></pre></div><p>谁执行函数，this 指向谁：</p> <div class="language- extra-class"><pre class="language-text"><code>var o = {
+	a: 10,
+	b: {
+		a: 2,
+		fn: function(){
+			console.log(this.a)
+			console.log(this)
+		}
+	}
+}
+o.b.fn()
+// 此时fn指向b
+// 2
+// { fn: function(){...}}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>window.name = 'ByteDance'
+function A(){
+	this.name = '123'
+}
+A.prototype.getA = function(){
+	console.log(this)
+	return this.name + 1
+}
+let a = new A()
+let funcA = a.getA //本身没有，构造函数里面没有，构造函数的原型有
+funcA() //在window上执行，执行函数内的this指向window
+// window: {}
+// ByteDance1
+// 如果this指向a，返回 a:{} ，return this.name+1被忽略，因为是基本数据类型。
+</code></pre></div><p>闭包函数的this永远指向window。</p> <div class="language- extra-class"><pre class="language-text"><code>var length = 10
+function fn(){
+	return this.length + 1
+}
+var obj = {
+	length: 5,
+	test1: function(){
+		return fn();
+	}
+}
+obj.test2 = fn() //  obj.test2 = fn(){return this.length+1}
+console.log( obj.test1() ) // 11，闭包中内部函数的this指向为window
+console.log( fn() === obj.test2() ) // false, 11 不等于 6 
+console.log( obj.test1() == obj.test2() ) // false, 11 不等于 6
+</code></pre></div><hr> <h1 id=""><a href="#" class="header-anchor">#</a></h1></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-cb1513f6></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/blog/assets/js/app.2e9696a1.js" defer></script><script src="/blog/assets/js/3.c351a46b.js" defer></script><script src="/blog/assets/js/1.b56bfbe1.js" defer></script><script src="/blog/assets/js/95.03921a84.js" defer></script>
+  </body>
+</html>
